@@ -1,1 +1,23 @@
 pyvjoy is a set of Python bindings for vJoy (vjoystick.sourceforge.net)
+
+
+USAGE
+
+import pyvjoy
+
+
+myvj = pyvjoy.VJoyDevice(1)
+
+#turn on button number 15
+myvj.SetButton(1,15)
+
+#turn it off again
+myvj.SetButton(0,15)
+
+#Set X axis to fully left
+myvj.SetAxis(0x1, pyvjoy.HID_USAGE_X)
+
+#Set X axis to fully right
+myvj.SetAxis(0x8000, pyvjoy.HID_USAGE_X)
+
+
