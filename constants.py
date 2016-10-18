@@ -1,3 +1,5 @@
+DLL_FILENAME = "vJoyInterface.dll"
+
 HID_USAGE_X = 0x30
 HID_USAGE_Y	= 0x31
 HID_USAGE_Z	= 0x32

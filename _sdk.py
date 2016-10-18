@@ -6,8 +6,7 @@ from pyvjoy.constants import *
 from pyvjoy.exceptions import *
 
 
-dll_filename = "vJoyInterface.dll"
-dll_path = os.path.dirname(__file__) + os.sep + dll_filename
+dll_path = os.path.dirname(__file__) + os.sep + DLL_FILENAME
 
 try:
 	_vj = cdll.LoadLibrary(dll_path)
