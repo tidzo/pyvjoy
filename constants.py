@@ -21,3 +21,4 @@ VJD_STAT_FREE = 1 	# The  vJoy Device is NOT owned by any application (including
 VJD_STAT_BUSY = 2   # The  vJoy Device is owned by another application. It cannot be acquired by this application.
 VJD_STAT_MISS = 3 	# The  vJoy Device is missing. It either does not exist or the driver is down.
 VJD_STAT_UNKN = 4 	# Unknown
+

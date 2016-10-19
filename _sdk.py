@@ -2,6 +2,7 @@ import os
 import sys
 from ctypes import *
 
+
 from pyvjoy.constants import *
 from pyvjoy.exceptions import *
 
@@ -135,5 +136,59 @@ def ResetButtons(rID):
 
 def ResetPovs(rID):
 	"""Reset all POV hats to default for specified vJoy Device"""
-	return _vj.ResetButtons(rID)
+	return _vj.ResetPovs(rID)
+
+	
+def UpdateVJD(rID, data):
+	"""Pass data for all buttons and axes to vJoy Device efficiently"""
+	return _vj.UpdateVJD(rID, data)
+
+	
+def CreateDataStructure(rID):
+	data = _JOYSTICK_POSITION_V2()
+	data.set_defaults(rID)
+	return data
+	
+	
+class _JOYSTICK_POSITION_V2(Structure):
+	_fields_ = [
+	('bDevice', c_byte),
+	('wThrottle', c_long),
+	('wRudder', c_long),
+	('wAileron', c_long),
+	('wAxisX', c_long),
+	('wAxisY', c_long),
+	('wAxisZ', c_long),
+	('wAxisXRot', c_long),
+	('wAxisYRot', c_long),
+	('wAxisZRot', c_long),
+	('wSlider', c_long),
+	('wDial', c_long),
+	('wWheel', c_long),
+	('wAxisVX', c_long),
+	('wAxisVY', c_long),
+	('wAxisVZ', c_long),
+	('wAxisVBRX', c_long),
+	('wAxisVRBY', c_long),
+	('wAxisVRBZ', c_long),
+	('lButtons', c_long), # 32 buttons: 0x00000001 means button1 is pressed, 0x80000000 -> button32 is pressed
+	
+	('bHats', wintypes.DWORD ),		# Lower 4 bits: HAT switch or 16-bit of continuous HAT switch
+	('bHatsEx1', wintypes.DWORD ),		# Lower 4 bits: HAT switch or 16-bit of continuous HAT switch
+	('bHatsEx2', wintypes.DWORD ),		# Lower 4 bits: HAT switch or 16-bit of continuous HAT switch
+	('bHatsEx3', wintypes.DWORD ),		# Lower 4 bits: HAT switch or 16-bit of continuous HAT switch LONG lButtonsEx1
+	
+	# JOYSTICK_POSITION_V2 Extension
+	
+	('lButtonsEx1', c_long),	# Buttons 33-64	
+	('lButtonsEx2', c_long), # Buttons 65-96
+	('lButtonsEx3', c_long), # Buttons 97-128
+	]
+	
+	def set_defaults(self, rID):
+		
+		self.bDevice=c_byte(rID)
+		self.bHats=-1
+		
+ 
 
