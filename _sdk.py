@@ -6,6 +6,7 @@ from ctypes import *
 from pyvjoy.constants import *
 from pyvjoy.exceptions import *
 
+from ctypes import wintypes	# Makes this lib work in Python36
 
 dll_path = os.path.dirname(__file__) + os.sep + DLL_FILENAME
 
