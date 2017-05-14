@@ -12,7 +12,7 @@ dll_path = os.path.dirname(__file__) + os.sep + DLL_FILENAME
 try:
 	_vj = cdll.LoadLibrary(dll_path)
 except OSError:
-	sys.exit("Unable to load vJoy SDK DLL.  Ensure that %s is present" % dll_filename)
+	sys.exit("Unable to load vJoy SDK DLL.  Ensure that %s is present" % DLL_FILENAME)
 
 
 def vJoyEnabled():
