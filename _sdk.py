@@ -1,8 +1,7 @@
 import os
 import sys
 from ctypes import *
-
-
+from ctypes import wintypes
 from pyvjoy.constants import *
 from pyvjoy.exceptions import *
 
