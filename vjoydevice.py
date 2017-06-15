@@ -38,7 +38,12 @@ class VJoyDevice(object):
 		"""Set a given Axis (one of pyvjoy.HID_USAGE_X etc) to a value (0x0000 - 0x8000)"""
 		return self._sdk.SetAxis(AxisValue,self.rID,AxisID)
 		
-		
+	def set_disc_pov(self, PovID, PovValue):
+		return self._sdk.SetDiscPov(PovValue, self.rID, PovID)
+
+	def set_cont_pov(self, PovID, PovValue):
+		return self._sdk.SetContPov(PovValue, self.rID, PovID)
+
 	def reset(self):
 		"""Reset all axes and buttons to default values"""
 			
