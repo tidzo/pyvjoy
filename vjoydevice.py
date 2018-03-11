@@ -70,6 +70,8 @@ class VJoyDevice(object):
 		return self._sdk.UpdateVJD(self.rID, self.data)
 
 		
-
+	def __del__(self):
+		# free up the controller before losing access
+		self._sdk.RelinquishVJD(self.rID)
 		
 	
