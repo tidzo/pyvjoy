@@ -3,7 +3,7 @@ pyvjoy is a set of Python bindings for vJoy (vjoystick.sourceforge.net)
 With this library you can easily set Axis and Button values on any vJoy device.  
 Low-level bindings are provided in pyvjoy._sdk as well as a (hopefully) slightly more 'Pythonic' API in the pyvjoy.VJoyDevice() object.
 
-Currently vJoyInterface.dll is looked for inside the pyvjoy directory only so place the desired version of that file there to use.
+Currently vJoyInterface.dll is looked for inside the pyvjoy directory only so place the desired version of that file there to use. (Note: this library currently only works with the x86 dll!)
 
 "Pointy's Joystick Test App" is very useful when testing vJoy and this library: http://www.planetpointy.co.uk/joystick-test-application/
 
