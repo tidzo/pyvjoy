@@ -69,7 +69,7 @@ def SetBtn(state,rID,buttonID):
 	"""Sets the state of vJoy Button to on or off.  SetBtn(state,rID,buttonID)"""
 	result = _vj.SetBtn(state,rID,buttonID)
 	if result == 0:
-		raise vJoyButtonError()
+		raise vJoyButtonException()
 	else:
 		return True
 
@@ -99,7 +99,7 @@ def SetBtn(state,rID,buttonID):
 	"""Sets the state of vJoy Button to on or off.  SetBtn(state,rID,buttonID)"""
 	result = _vj.SetBtn(state,rID,buttonID)
 	if result == 0:
-		raise vJoyButtonError()
+		raise vJoyButtonException()
 	else:
 		return True
 
